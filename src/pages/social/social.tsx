@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import LinkModal from "@/components/LinkModal";
 import BankQRModal from "@/components/BankQRModal";
+import React from "react";
 
 type Row = { label: string; value?: string; g7?: string; g30?: string };
 type SectionCommon = { title: string };
@@ -26,6 +27,25 @@ export default function Social() {
   const [showQR, setShowQR] = useState(false);
   const [currentOrder, setCurrentOrder] = useState<{ id: string; amount: number } | null>(null);
 
+
+  const InlineActivityDemo = () => {
+    const demo = [
+      "abc vừa follow bạn",
+      "minhthu123 đã follow bạn",
+      "ngocanh_98 đã follow bạn",
+      "trungcute vừa follow bạn",
+      "linh.lee đã follow bạn",
+    ];
+    return (
+      <div className="mt-3 rounded-2xl bg-white/70 dark:bg-slate-800/60 shadow-sm ring-1 ring-black/5 dark:ring-white/10 p-3">
+        {demo.map((t, i) => (
+          <p key={i} className="text-sm text-slate-700 dark:text-slate-200 border-b last:border-0 border-black/5 dark:border-white/10 py-1">
+            {t}
+          </p>
+        ))}
+      </div>
+    );
+  };
   // Bấm Order -> hỏi link
   const handleBuy = (label: string, price: string) => {
     setPendingItem({ label, price });
@@ -372,6 +392,16 @@ export default function Social() {
             Tự tin gần 10 năm trong lĩnh vực tăng tương tác mạng xã hội <br />
             Zalo/Call/Sms: 0909 172 556
           </p>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <Link
+              href="/social/demo"
+              className="inline-flex items-center rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-3 py-1.5 text-sm font-semibold hover:opacity-90 transition"
+            >
+              Demo hoạt động follow →
+            </Link>
+          s
+          </div>
+
 
           <div className="mt-8 sm:mt-10 flex flex-col gap-8 sm:gap-10">
             {platforms.map((pf) => (

@@ -34,7 +34,7 @@ export default function Header({
             {/* hiển thị cả mobile + desktop */}
         <nav className="flex items-center gap-4 text-sm font-medium text-slate-700 dark:text-slate-200">
           <Link href="/" className="hover:underline">Deals</Link>
-          <Link href="/social" className="hover:underline">Tăng follow</Link>
+          <Link href="/social/social" className="hover:underline">Tăng follow</Link>
         </nav>
 
           <button
