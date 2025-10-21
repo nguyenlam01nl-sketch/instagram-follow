@@ -26,12 +26,12 @@ export default function QuickAdviceButton() {
   };
 
   const suggestion = () => {
-    if (platform === "TikTok" && service === "Follow") return "Gói TikTok Follow Pro – 5.000 follow / tuần 🎯";
-    if (platform === "TikTok" && service === "Like") return "Gói TikTok Like Basic – 10.000 lượt thích / tuần 💫";
-    if (platform === "Facebook" && service === "Follow") return "Gói Facebook Follow Bền Vững – 2.000 follow / tuần 🌱";
-    if (platform === "Facebook" && service === "Like") return "Gói Facebook Like Tự Nhiên – 5.000 like / tuần 👍";
-    if (platform === "Instagram" && service === "Follow") return "Gói Instagram Growth Pro – 1.500 follow / tuần 💖";
-    if (platform === "Instagram" && service === "Like") return "Gói Instagram Like Boost – 3.000 like / tuần ✨";
+    if (platform === "TikTok" && service === "Follow") return "Gói TikTok Follow Pro – 5.000 follow / lượt 🎯";
+    if (platform === "TikTok" && service === "Like") return "Gói TikTok Like Basic – 10.000 lượt thích / lượt 💫";
+    if (platform === "Facebook" && service === "Follow") return "Gói Facebook Follow Bền Vững – 2.000 follow / lượt 🌱";
+    if (platform === "Facebook" && service === "Like") return "Gói Facebook Like Tự Nhiên – 5.000 like / lượt 👍";
+    if (platform === "Instagram" && service === "Follow") return "Gói Instagram Growth Pro – 1.500 follow / lượt 💖";
+    if (platform === "Instagram" && service === "Like") return "Gói Instagram Like Boost – 3.000 like / lượt ✨";
     return "";
   };
 
@@ -130,7 +130,7 @@ export default function QuickAdviceButton() {
                     onClick={resetAll}
                     className="rounded-xl border border-gray-300 py-2 hover:bg-gray-50"
                   >
-                    Không hợp, liên hệ Zalo
+                    Đóng để order trực tiếp trên website
                   </button>
 
                   <a
