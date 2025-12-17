@@ -362,23 +362,23 @@ export default function Social() {
                           <td className="py-2 px-2 text-right align-middle">
                             <div className="flex items-center justify-end gap-2 flex-nowrap">
                               <span className="whitespace-nowrap">{r.g7 ?? "–"}</span>
-                              {r.g7 && (
+                              {/* {r.g7 && (
                                 <ActionBtn
                                   onClick={() => handleBuy(pf.key, sec, r.label + " BH7", r.g7!)}
                                   disabled={loading}
                                 />
-                              )}
+                              )} */}
                             </div>
                           </td>
                           <td className="py-2 px-2 text-right align-middle">
                             <div className="flex items-center justify-end gap-2 flex-nowrap">
                               <span className="whitespace-nowrap">{r.g30 ?? "–"}</span>
-                              {r.g30 && (
+                              {/* {r.g30 && (
                                 <ActionBtn
                                   onClick={() => handleBuy(pf.key, sec, r.label + " BH30", r.g30!)}
                                   disabled={loading}
                                 />
-                              )}
+                              )} */}
                             </div>
                           </td>
                         </tr>
@@ -403,12 +403,12 @@ export default function Social() {
                           <td className="py-2 px-3 text-right align-middle">
                             <div className="flex items-center justify-end gap-2 flex-nowrap">
                               <span className="whitespace-nowrap">{r.g30 ?? r.value ?? "–"}</span>
-                              {(r.g30 || r.value) && (
+                              {/* {(r.g30 || r.value) && (
                                 <ActionBtn
                                   onClick={() => handleBuy(pf.key, sec, r.label, r.g30 ?? r.value ?? "")}
                                   disabled={loading}
                                 />
-                              )}
+                              )} */}
                             </div>
                           </td>
                         </tr>
@@ -427,12 +427,12 @@ export default function Social() {
                           <td className="py-2 px-3 text-right align-middle">
                             <div className="flex items-center justify-end gap-2 flex-nowrap">
                               <span className="whitespace-nowrap">{r.value ?? "–"}</span>
-                              {r.value && (
+                              {/* {r.value && (
                                 <ActionBtn
                                   onClick={() => handleBuy(pf.key, sec, r.label, r.value!)}
                                   disabled={loading}
                                 />
-                              )}
+                              )} */}
                             </div>
                           </td>
                         </tr>

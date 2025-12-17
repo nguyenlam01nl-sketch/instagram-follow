@@ -126,13 +126,7 @@ export default function QuickAdviceButton() {
                 <p className="mt-3 text-gray-700">{suggestion()}</p>
 
                 <div className="mt-5 flex flex-col gap-2">
-                  <button
-                    onClick={resetAll}
-                    className="rounded-xl border border-gray-300 py-2 hover:bg-gray-50"
-                  >
-                    Đóng để order trực tiếp trên website
-                  </button>
-
+                
                   <a
                     href="https://zalo.me/0909172556"
                     target="_blank"
@@ -141,6 +135,14 @@ export default function QuickAdviceButton() {
                   >
                     Chat Zalo 💬
                   </a>
+
+                  <button
+                    onClick={resetAll}
+                    className="rounded-xl border border-gray-300 py-2 hover:bg-gray-50"
+                  >
+                    Đóng để tham khảo thêm những gói khác
+                  </button>
+
                 </div>
               </>
             )}
