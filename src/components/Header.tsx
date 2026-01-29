@@ -15,7 +15,7 @@ export default function Header({
         <div className="flex items-center gap-3">
           <span className="h-8 w-8 rounded-xl bg-gradient-to-tr from-[--color-brand-500] to-[--color-brand-600] shadow-sm" />
           <Link href="/" className="font-bold tracking-tight text-slate-900 dark:text-white">
-            nguyenlamsocial.ig
+            hackfollowuytin.inst
           </Link>
          
         </div>

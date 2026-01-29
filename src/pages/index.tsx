@@ -734,7 +734,8 @@ export default function Social() {
   return (
     <>
       <Head>
-        <title>nguyenlamsocial.ig — Dịch vụ Follow & Bảng giá</title>
+        <title>            hackfollowuytin.inst
+ — Dịch vụ Follow & Bảng giá</title>
       </Head>
 
       <div className="min-h-screen bg-[#070A12] text-white">
@@ -835,7 +836,8 @@ export default function Social() {
           <QuickAdviceButton />
 
           <footer className="py-10 text-center text-xs text-white/55">
-            © {new Date().getFullYear()} nguyenlamsocial.ig — Follow Service
+            © {new Date().getFullYear()}             hackfollowuytin.inst
+ — Follow Service
           </footer>
         </main>
 

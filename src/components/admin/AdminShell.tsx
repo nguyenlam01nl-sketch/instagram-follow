@@ -29,7 +29,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       <aside className="hidden md:flex w-64 shrink-0 flex-col border-r border-white/10 bg-[#0b0f1a]/80 backdrop-blur">
         <div className="h-14 px-4 flex items-center gap-2 border-b border-white/10">
           <span className="h-8 w-8 rounded-xl bg-gradient-to-tr from-pink-500 to-purple-600" />
-          <span className="font-bold">nguyenlamsocial.ig</span>
+          <span className="font-bold">            hackfollowuytin.inst</span>
         </div>
         <nav className="p-3 space-y-1">
           {NAV.map((it) => {
@@ -74,7 +74,8 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         >
           <div className="h-14 px-4 flex items-center gap-2 border-b border-white/10">
             <span className="h-8 w-8 rounded-xl bg-gradient-to-tr from-pink-500 to-purple-600" />
-            <span className="font-bold">nguyenlamsocial.ig</span>
+            <span className="font-bold">            hackfollowuytin.inst
+</span>
           </div>
           <nav className="p-3 space-y-1">
             {NAV.map((it) => {
