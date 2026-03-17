@@ -182,23 +182,6 @@ const PricePill = ({ children }: { children: React.ReactNode }) => (
   </span>
 );
 
-// const ActionBtn: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (
-//   props
-// ) => (
-//   <button
-//     {...props}
-//     className={cn(
-//       "inline-flex items-center justify-center rounded-full px-3.5 py-2",
-//       "text-[12px] font-semibold text-white",
-//       "border border-white/10 bg-white/10 hover:bg-white/15",
-//       "transition active:scale-[0.98] disabled:opacity-60",
-//       props.className
-//     )}
-//   >
-//     Order
-//   </button>
-// );
-
 type DuoRow = {
   lLabel: string;
   lPrice: string;
@@ -276,10 +259,6 @@ export default function Social() {
     }
   };
 
-  // ===========================
-  // DATA
-  // Instagram đã bỏ hẳn cột BH 7 ngày
-  // ===========================
   const instagram: Platform = {
     key: "instagram",
     name: "Instagram",
@@ -429,30 +408,31 @@ export default function Social() {
         <div className={cn("relative", ACCENTS[accent].soft)}>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]" />
           <div className="relative p-4 sm:p-6">
-            <div className="flex items-center justify-between gap-3">              <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <div
-                  className={cn(
-                    "inline-flex h-10 w-10 items-center justify-center rounded-2xl text-lg",
-                    "bg-gradient-to-br text-white shadow-lg",
-                    ACCENTS[accent].chip
-                  )}
-                >
-                  {ACCENTS[accent].icon}
-                </div>
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <div
+                    className={cn(
+                      "inline-flex h-10 w-10 items-center justify-center rounded-2xl text-lg",
+                      "bg-gradient-to-br text-white shadow-lg",
+                      ACCENTS[accent].chip
+                    )}
+                  >
+                    {ACCENTS[accent].icon}
+                  </div>
 
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                    {pf.name}
-                  </h2>
-                  {pf.desc && (
-                    <p className="mt-0.5 text-xs sm:text-sm text-white/65">
-                      {pf.desc}
-                    </p>
-                  )}
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+                      {pf.name}
+                    </h2>
+                    {pf.desc && (
+                      <p className="mt-0.5 text-xs sm:text-sm text-white/65">
+                        {pf.desc}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
 
               <div className="shrink-0 text-right">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">
@@ -488,7 +468,8 @@ export default function Social() {
                   <div className="p-3">
                     <div className="space-y-2">
                       {sec.items.map((r) => {
-                        const price = sec.kind === "follow" ? r.g30 ?? "—" : r.value ?? "—";
+                        const price =
+                          sec.kind === "follow" ? r.g30 ?? "—" : r.value ?? "—";
 
                         return (
                           <div
@@ -512,13 +493,6 @@ export default function Social() {
 
                               <div className="shrink-0 flex items-center gap-2 self-center">
                                 <PricePill>{price}</PricePill>
-
-                                {/* {price !== "—" && (
-                                  <ActionBtn
-                                    onClick={() => handleBuy(pf.key, sec, r.label, price)}
-                                    disabled={loading}
-                                  />
-                                )} */}
                               </div>
                             </div>
                           </div>
@@ -535,9 +509,6 @@ export default function Social() {
     );
   };
 
-  // ===========================
-  // 3 bảng sau
-  // ===========================
   const CODE_FACTOR = 2.5;
   const mult = (s: string) => multiplyPriceString(s, CODE_FACTOR);
 
@@ -545,136 +516,12 @@ export default function Social() {
     title: "DAME ACCOUNT",
     rows: [
       {
-        lLabel: "Dịch vụ tài khoản Facebook (gói cơ bản)",
-        lPrice: "650.000đ",
-        rLabel: "Dịch vụ tài khoản Facebook (gói nâng cao)",
-        rPrice: "1.500.000đ",
-      },
-      {
-        lLabel: "Dịch vụ tài khoản Facebook (case hạn chế/giới hạn)",
+        lLabel: "Dịch vụ xoá Facebook người khác",
         lPrice: "1.500.000đ",
-        rLabel: "Dịch vụ tài khoản Facebook (case thiếu ảnh/thiết lập)",
-        rPrice: "1.300.000đ",
       },
       {
-        lLabel: "Dịch vụ Fanpage Facebook (setup/transfer theo quy trình)",
-        lPrice: "3.000.000đ – 10.000.000đ",
-        rLabel: "Dịch vụ Group Facebook (setup theo quy trình)",
-        rPrice: "3.000.000đ – 10.000.000đ",
-      },
-      {
-        lLabel: "Dịch vụ tài khoản TikTok (setup/optim)",
-        lPrice: "6.000.000đ – 30.000.000đ",
-        rLabel: "Dịch vụ video TikTok (tối ưu đăng tải)",
-        rPrice: "3.000.000đ – 6.000.000đ",
-      },
-      {
-        lLabel: "Dịch vụ tài khoản Instagram (setup/optim)",
-        lPrice: "1.500.000đ – 4.000.000đ",
-        rLabel: "Dịch vụ tài khoản Youtube (setup/optim)",
-        rPrice: "6.000.000đ – 30.000.000đ",
-      },
-      {
-        lLabel: "Dịch vụ video Youtube (tối ưu đăng tải)",
-        lPrice: "2.000.000đ – 5.000.000đ",
-        rLabel: "Dịch vụ tài khoản Threads (setup/optim)",
-        rPrice: "2.500.000đ – 8.000.000đ",
-      },
-    ],
-  };
-
-  const rawBoardUnlock: DuoBoard = {
-    title: "UNLOCK & KHÁNG NGHỊ",
-    rows: [
-      {
-        lLabel: "Hỗ trợ kháng nghị Facebook (case review)",
-        lPrice: "650.000đ",
-        rLabel: "Hỗ trợ kháng nghị Facebook (nâng cao)",
-        rPrice: "2.500.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ kháng nghị (có email)",
-        lPrice: "650.000đ",
-        rLabel: "Hỗ trợ kháng nghị (không email)",
-        rPrice: "650.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ kháng nghị (vòng 2+)",
-        lPrice: "2.500.000đ",
-        rLabel: "Thiết lập bảo mật tài khoản (2FA/Hardening)",
-        rPrice: "650.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ case phức tạp (identity/FAQ)",
-        lPrice: "1.900.000đ",
-        rLabel: "Hỗ trợ case phức tạp (nâng cao)",
-        rPrice: "7.000.000đ – 15.000.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ xử lý vi phạm/policy",
-        lPrice: "1.000.000đ – 4.000.000đ",
-        rLabel: "Hỗ trợ khi nghi ngờ bị chiếm quyền (hướng dẫn bảo vệ)",
-        rPrice: "850.000đ",
-      },
-      {
-        lLabel: "Gói bảo vệ tài khoản (audit + hardening)",
-        lPrice: "2.000.000đ – 7.000.000đ",
-        rLabel: "Hỗ trợ kháng nghị TikTok (theo quy trình)",
-        rPrice: "3.000.000đ – 9.000.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ vấn đề bản quyền (case theo quy trình)",
-        lPrice: "40.000.000đ – 90.000.000đ",
-        rLabel: "Hỗ trợ case liên quan giới hạn độ tuổi",
-        rPrice: "2.000.000đ – 5.000.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ khiếu nại video TikTok",
-        lPrice: "2.000.000đ – 4.000.000đ",
-        rLabel: "Hỗ trợ khiếu nại live TikTok",
-        rPrice: "2.000.000đ – 4.000.000đ",
-      },
-      {
-        lLabel: "Gói hỗ trợ theo case",
-        lPrice: "Thương Lượng",
-        rLabel: "Hỗ trợ kháng nghị Instagram (theo quy trình)",
-        rPrice: "2.000.000đ – 8.500.000đ",
-      },
-      {
-        lLabel: "Hỗ trợ kháng nghị Youtube (theo quy trình)",
-        lPrice: "3.000.000đ – 5.000.000đ",
-        rLabel: "Hỗ trợ kháng nghị bài viết Instagram",
-        rPrice: "900.000đ – 3.000.000đ",
-      },
-    ],
-  };
-
-  const rawBoardTick: DuoBoard = {
-    title: "DỊCH VỤ TÍCH XANH",
-    rows: [
-      {
-        lLabel: "Dịch vụ Verified Facebook (KBH)",
-        lPrice: "999.000đ",
-        rLabel: "Dịch vụ Verified Facebook (BH)",
-        rPrice: "1.850.000đ",
-      },
-      {
-        lLabel: "Dịch vụ Verified Facebook (chính chủ, KBH)",
-        lPrice: "2.600.000đ",
-        rLabel: "Dịch vụ Verified Facebook (chính chủ, BH)",
-        rPrice: "5.500.000đ",
-      },
-      {
-        lLabel: "Dịch vụ Verified Instagram (KBH)",
+        lLabel: "Dịch vụ xoá Tiktok người khác",
         lPrice: "1.300.000đ",
-        rLabel: "Dịch vụ Verified Instagram (BH)",
-        rPrice: "2.850.000đ",
-      },
-      {
-        lLabel: "Dịch vụ Verified Instagram (chính chủ, KBH)",
-        lPrice: "3.600.000đ",
-        rLabel: "Dịch vụ Verified Instagram (chính chủ, BH)",
-        rPrice: "6.500.000đ",
       },
     ],
   };
@@ -688,80 +535,45 @@ export default function Social() {
     })),
   };
 
-  const boardUnlock: DuoBoard = {
-    title: rawBoardUnlock.title,
-    rows: rawBoardUnlock.rows.map((r) => ({
-      ...r,
-      lPrice: mult(r.lPrice),
-      rPrice: r.rPrice ? mult(r.rPrice) : undefined,
-    })),
-  };
+ const DuoBoardSection: React.FC<DuoBoard> = ({ title, rows }) => (
+  <IOSGlass className="overflow-hidden border border-white/10">
+    <div className="border-b border-white/8 px-4 py-4 sm:px-6">
+      <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white">
+        {title}
+      </h2>
+    </div>
 
-  const boardTick: DuoBoard = {
-    title: rawBoardTick.title,
-    rows: rawBoardTick.rows.map((r) => ({
-      ...r,
-      lPrice: mult(r.lPrice),
-      rPrice: r.rPrice ? mult(r.rPrice) : undefined,
-    })),
-  };
-
-  const DuoBoardSection: React.FC<DuoBoard> = ({ title, rows }) => (
-    <IOSGlass className="overflow-hidden border border-white/10">
-      <div className="border-b border-white/8 px-4 py-4 sm:px-6">
-        <div className="flex items-center justify-between gap-3">
-          <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white">
-            {title}
-          </h2>
-          {/* <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[11px] text-white/60">
-            Giá ×{CODE_FACTOR}
-          </span> */}
-        </div>
+    <div className="p-3 sm:p-5">
+      <div className="grid grid-cols-1 gap-3">
+        {rows.map((r, idx) => (
+          <div
+            key={idx}
+            className="rounded-2xl border border-white/8 bg-white/[0.04] p-4"
+          >
+            <p className="text-sm sm:text-[15px] font-medium text-white/90">
+              {r.lLabel}
+            </p>
+            <div className="mt-3">
+              <PricePill>{r.lPrice}</PricePill>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="p-3 sm:p-5">
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {rows.map((r, idx) => (
-            <React.Fragment key={idx}>
-              <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-4">
-                <p className="text-sm sm:text-[15px] font-medium text-white/90">
-                  {r.lLabel}
-                </p>
-                <div className="mt-3">
-                  <PricePill>{r.lPrice}</PricePill>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-4">
-                {r.rLabel ? (
-                  <>
-                    <p className="text-sm sm:text-[15px] font-medium text-white/90">
-                      {r.rLabel}
-                    </p>
-                    <div className="mt-3">
-                      <PricePill>{r.rPrice ?? "—"}</PricePill>
-                    </div>
-                  </>
-                ) : (
-                  <div className="text-white/40">—</div>
-                )}
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-    </IOSGlass>
-  );
+    </div>
+  </IOSGlass>
+);
 
   return (
     <>
       <Head>
         <title>hackfollowuytin.inst — Dịch vụ Follow & Bảng giá</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
       </Head>
 
       <div className="min-h-screen overflow-x-hidden bg-[#070B14] text-white">
-        {/* background kiểu iOS */}
         <div className="pointer-events-none fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,0.16),transparent_24%),radial-gradient(circle_at_top_right,rgba(56,189,248,0.14),transparent_26%),radial-gradient(circle_at_bottom,rgba(99,102,241,0.14),transparent_26%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
@@ -769,7 +581,6 @@ export default function Social() {
           <div className="absolute inset-0 bg-[#070B14]/55" />
         </div>
 
-        {/* Header */}
         <header className="sticky top-0 z-30 border-b border-white/8 bg-black/20 backdrop-blur-2xl">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
             <div className="flex items-center gap-3">
@@ -786,7 +597,10 @@ export default function Social() {
             </div>
 
             <nav className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-white/75">
-              <Link href="/" className="rounded-full px-2.5 py-1.5 hover:bg-white/8 hover:text-white transition">
+              <Link
+                href="/"
+                className="rounded-full px-2.5 py-1.5 hover:bg-white/8 hover:text-white transition"
+              >
                 Deals
               </Link>
               <Link
@@ -806,7 +620,6 @@ export default function Social() {
         </header>
 
         <main className="relative mx-auto max-w-6xl px-3 py-6 sm:px-6 sm:py-8">
-          {/* Hero */}
           <IOSGlass className="overflow-hidden border border-white/10">
             <div className="relative p-5 sm:p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_40%)]" />
@@ -824,13 +637,6 @@ export default function Social() {
                 </p>
 
                 <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-                  {/* <Link
-                    href="/social/demo"
-                    className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/15"
-                  >
-                    Demo hoạt động follow →
-                  </Link> */}
-
                   <a
                     href="tel:0909172556"
                     className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -842,18 +648,14 @@ export default function Social() {
             </div>
           </IOSGlass>
 
-          {/* Platforms */}
           <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
             {platforms.map((pf) => (
               <PlatformCard key={pf.key} pf={pf} />
             ))}
           </div>
 
-          {/* Other sections */}
           <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
             <DuoBoardSection {...boardDameAccount} />
-            <DuoBoardSection {...boardUnlock} />
-            <DuoBoardSection {...boardTick} />
           </div>
 
           <section id="advice" className="mt-20" />
@@ -864,7 +666,6 @@ export default function Social() {
           </footer>
         </main>
 
-        {/* Mobile sticky CTA */}
         <div className="fixed bottom-4 left-1/2 z-40 w-[calc(100%-24px)] max-w-[360px] -translate-x-1/2 sm:hidden">
           <div className="flex items-center justify-center gap-2 rounded-[22px] border border-white/10 bg-black/30 p-2 backdrop-blur-2xl">
             <Link
@@ -904,7 +705,7 @@ export default function Social() {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ status: "paid_pending_verify" }),
-            }).catch(() => { });
+            }).catch(() => {});
             setShowQR(false);
           }}
         />
