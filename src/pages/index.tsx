@@ -517,11 +517,11 @@ export default function Social() {
     rows: [
       {
         lLabel: "Dịch vụ xoá Facebook người khác",
-        lPrice: "1.500.000đ",
+        lPrice: "900.000đ - 1.500.000đ",
       },
       {
         lLabel: "Dịch vụ xoá Tiktok người khác",
-        lPrice: "1.300.000đ",
+        lPrice: "1.300.000đ - 3.000.000đ",
       },
     ],
   };
@@ -668,12 +668,12 @@ export default function Social() {
 
         <div className="fixed bottom-4 left-1/2 z-40 w-[calc(100%-24px)] max-w-[360px] -translate-x-1/2 sm:hidden">
           <div className="flex items-center justify-center gap-2 rounded-[22px] border border-white/10 bg-black/30 p-2 backdrop-blur-2xl">
-            <Link
+            {/* <Link
               href="/social/demo"
               className="flex-1 rounded-full border border-white/10 bg-white/10 px-3 py-2.5 text-center text-xs font-semibold text-white"
             >
               Demo →
-            </Link>
+            </Link> */}
             <a
               href="tel:0909172556"
               className="flex-1 rounded-full border border-white/10 bg-white/10 px-3 py-2.5 text-center text-xs font-semibold text-white"
