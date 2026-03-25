@@ -484,13 +484,13 @@ export default function Social() {
                                 <p className="text-sm sm:text-[15px] font-medium leading-5 text-white/92">
                                   {r.label}
                                 </p>
-                               <p className="mt-1 text-[11px] sm:text-xs text-white/45">
-  {sec.kind === "follow"
-    ? pf.key === "tiktok"
-      ? "Không bảo hành"
-      : "Bảo hành 1 tháng"
-    : "Dịch vụ"}
-</p>
+                                <p className="mt-1 text-[11px] sm:text-xs text-white/45">
+                                  {pf.key === "tiktok"
+                                    ? "Không bảo hành"
+                                    : sec.kind === "follow"
+                                      ? "Bảo hành 1 tháng"
+                                      : "Dịch vụ"}
+                                </p>
                               </div>
 
                               <div className="shrink-0 flex items-center gap-2 self-center">
@@ -537,33 +537,33 @@ export default function Social() {
     })),
   };
 
- const DuoBoardSection: React.FC<DuoBoard> = ({ title, rows }) => (
-  <IOSGlass className="overflow-hidden border border-white/10">
-    <div className="border-b border-white/8 px-4 py-4 sm:px-6">
-      <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white">
-        {title}
-      </h2>
-    </div>
-
-    <div className="p-3 sm:p-5">
-      <div className="grid grid-cols-1 gap-3">
-        {rows.map((r, idx) => (
-          <div
-            key={idx}
-            className="rounded-2xl border border-white/8 bg-white/[0.04] p-4"
-          >
-            <p className="text-sm sm:text-[15px] font-medium text-white/90">
-              {r.lLabel}
-            </p>
-            <div className="mt-3">
-              <PricePill>{r.lPrice}</PricePill>
-            </div>
-          </div>
-        ))}
+  const DuoBoardSection: React.FC<DuoBoard> = ({ title, rows }) => (
+    <IOSGlass className="overflow-hidden border border-white/10">
+      <div className="border-b border-white/8 px-4 py-4 sm:px-6">
+        <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white">
+          {title}
+        </h2>
       </div>
-    </div>
-  </IOSGlass>
-);
+
+      <div className="p-3 sm:p-5">
+        <div className="grid grid-cols-1 gap-3">
+          {rows.map((r, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border border-white/8 bg-white/[0.04] p-4"
+            >
+              <p className="text-sm sm:text-[15px] font-medium text-white/90">
+                {r.lLabel}
+              </p>
+              <div className="mt-3">
+                <PricePill>{r.lPrice}</PricePill>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </IOSGlass>
+  );
 
   return (
     <>
@@ -668,7 +668,7 @@ export default function Social() {
           </footer>
         </main>
 
-      
+
       </div>
 
       {showModal && (
@@ -692,7 +692,7 @@ export default function Social() {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ status: "paid_pending_verify" }),
-            }).catch(() => {});
+            }).catch(() => { });
             setShowQR(false);
           }}
         />
