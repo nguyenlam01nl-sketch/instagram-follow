@@ -484,11 +484,13 @@ export default function Social() {
                                 <p className="text-sm sm:text-[15px] font-medium leading-5 text-white/92">
                                   {r.label}
                                 </p>
-                                <p className="mt-1 text-[11px] sm:text-xs text-white/45">
-                                  {sec.kind === "follow"
-                                    ? "Bảo hành 1 tháng"
-                                    : "Dịch vụ"}
-                                </p>
+                               <p className="mt-1 text-[11px] sm:text-xs text-white/45">
+  {sec.kind === "follow"
+    ? pf.key === "tiktok"
+      ? "Không bảo hành"
+      : "Bảo hành 1 tháng"
+    : "Dịch vụ"}
+</p>
                               </div>
 
                               <div className="shrink-0 flex items-center gap-2 self-center">
